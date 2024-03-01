@@ -51,16 +51,15 @@ Constraints:
 #include <stdio.h>
 
 int peakElement(int[], int);
-int peakElementOptimized(int[], int);
 
 int main() {
     int arr[] = {5,6,7};
     int n = 3;
-    int result = peakElementOptimized(arr, n);
+    int result = peakElement(arr, n);
     printf("Peak Element is at index %d", result);
 }
 
-int peakElementOptimized(int arr[], int n) {
+int peakElement(int arr[], int n) {
     int start = 0;
     int end = n - 1;
     int middle;
@@ -72,31 +71,4 @@ int peakElementOptimized(int arr[], int n) {
             end = middle;
     }
     return end;
-}
-
-int peakElement(int arr[], int n) {
-    int i = n / 2;
-    
-    if(n == 2) {
-        if(arr[0] >= arr[1])
-            return 0;
-        else
-            return 1;
-    }
-    
-    while(i > 0 && i < n - 1) {
-        printf("i = %d\n", i);
-        if(arr[i] >= arr[i - 1] && arr[i] >= arr[i + 1]) {
-            return i;
-        } else if(arr[i + 1] >= arr[i]) {
-            i += (n - i) / 2;
-            if(i == n - 1)
-                return i;
-        } else {
-            i -= (i + 1) / 2;
-            if(i == 0)
-                return i;
-        }
-    }
-    return 0;
 }
