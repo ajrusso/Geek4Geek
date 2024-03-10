@@ -1,0 +1,11 @@
+# Directory
+SandBox/
+
+# VSCode
+*.vscode
+
+# C/CPP
+*.obj
+*.pdb
+*.exe
+*.ilk
