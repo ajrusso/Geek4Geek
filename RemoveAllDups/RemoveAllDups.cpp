@@ -51,7 +51,6 @@ int main() {
     
     cout << "OG     = " << str << endl;
     string result = removeDuplicates(str);
-    
     cout << "result = " << result << endl;
 }
 
