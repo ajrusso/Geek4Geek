@@ -84,5 +84,6 @@ int countPairs(vector<vector<int>> &mat1, vector<vector<int>> &mat2, int n, int 
                 count++;
         }
     }
+    
     return count;
 }
