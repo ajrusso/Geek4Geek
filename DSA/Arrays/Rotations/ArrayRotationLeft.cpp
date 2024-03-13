@@ -11,19 +11,21 @@ using namespace std;
 void leftRotateV1(int[], int, int);
 void leftRotateV2(int[], int, int);
 void leftRotateV3(int[], int, int);
+void leftRotateV4(int[], int, int);
 int getGCD(int, int);
+void reverse(int[], int, int);
 void printArray(int[], int);
 
 
 int main() {
     int arr[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14};
-    int d = 2;
+    int d = 17;
     int n = 15;
 
     cout << "Original             :   ";
     printArray(arr, n);
 
-    leftRotateV3(arr, d, n);
+    leftRotateV4(arr, d, n);
 
     cout << "Left Rotate " << d << " Times :   "; 
     printArray(arr, n);
@@ -87,6 +89,22 @@ int getGCD(int a, int b) {
         return a;
     else
         return getGCD(b, a % b);
+}
+
+void leftRotateV4(int arr[], int d, int n) {
+    d %= n;
+    reverse(arr, 0, d - 1);
+    reverse(arr, d, n - 1);
+    reverse(arr, 0, n - 1);
+}
+
+void reverse(int arr[], int low, int high) {
+    int temp = 0;
+    if(low < high) {
+        temp = arr[low];
+        arr[low++] = arr[high];
+        arr[high--] = temp;
+    }
 }
 
 void printArray(int arr[], int n) {
