@@ -70,7 +70,7 @@ int main() {
 
 Node* deleteTail(Node* head) {
     if(!head)
-        return head;
+        return NULL;
 
     if(!head->next)
         return NULL;
